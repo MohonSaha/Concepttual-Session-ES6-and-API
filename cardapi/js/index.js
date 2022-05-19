@@ -1,3 +1,24 @@
 const searchButton = () => {
-    console.log("button added");
+    const input = document.getElementById("input-value");
+    const error = document.getElementById("error");
+    const inputValue = input.value;
+    if(isNaN(inputValue) || inputValue == ""){
+        // alert("please enter a number");
+        error.innerText="please give a number";
+        input.value = "";
+    }
+    else if(inputValue <= 0){
+        error.innerText= "please give a positive number"
+        input.value="";
+    }
+    else{
+        fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=${inputValue}`)
+        .then(res => res.json())
+        .then(data => cardsDisplay(data))
+        input.value="";
+    }
+}
+
+const cardsDisplay = (cards) => {
+    console.log(cards);
 }
