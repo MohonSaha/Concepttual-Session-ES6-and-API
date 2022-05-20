@@ -1,0 +1,5 @@
+1. Api Load
+2. Super important error handeling
+3. Responsive page by js
+4. Alart error handeling
+5. Manually error handel
